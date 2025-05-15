@@ -155,15 +155,37 @@ print(response.text)
 - You can customize the agent's behavior in Langflow (e.g., "Act as a shopping assistant for electronics.")
 - AstraDB handles vector similarity using `LangChain`-compatible APIs
 
+🧪 Testing & Iterations
+
+#### ✅ Test Cases:
+
+* “Show me budget phones under ₹15000”
+* “I need Bluetooth headphones for gym use”
+* “Compare these two laptops”
+* “Suggest something like Apple Watch but cheaper”
+
 ---
 
-## ✅ Future Enhancements
+🎯 Industry-Grade Features to Add Later
 
-- Integrate image-based search
-- Add user feedback collection and fine-tuning
-- Deploy with a front-end using Streamlit or React
+| Feature                     | Description                                                |
+| --------------------------- | ---------------------------------------------------------- |
+| ✅ **Comparison Engine**     | Allow comparison of selected products via structured table |
+| ✅ **Voice Input**           | Add Whisper API or Web Speech API for voice-based shopping |
+| ✅ **Personalization**       | Store user preferences using Astra `users` table           |
+| ✅ **Feedback Loop**         | Let users upvote/downvote suggestions to fine-tune         |
+| ✅ **Image Search**          | Use CLIP model + Astra for vision-based product search     |
+| ✅ **Multi-lingual Support** | Translate input/output via LLM (for regional users)        |
+| ✅ **Cart Simulation**       | Add-to-cart functionality using Astra session tracking     |
 
----
+## 📦 Deliverables
+
+1. Langflow flow JSON (exported)
+2. Astra DB schema
+3. Python scripts (embedding, query logic)
+4. API wrapper (FastAPI)
+5. UI (optional)
+6. Dockerfile + deployment instructions
 
 ## 📞 Support
 
