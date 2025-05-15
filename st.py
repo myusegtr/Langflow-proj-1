@@ -13,7 +13,7 @@ user_query = st.text_input("Ask me something:", placeholder="e.g., show me the t
 url = "https://api.langflow.astra.datastax.com/lf/fcd6a819-9d83-4380-af90-b65f32163a02/api/v1/run/22253f7f-5134-4c85-8628-2d80f47263e5"
 headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer YOUR_TOKEN>"
+    "Authorization": "Bearer <YOUR_TOKEN>"
 }
 
 # Show response on form submission
@@ -31,9 +31,13 @@ if st.button("Get Results") and user_query.strip():
 
         # ✅ Extract only the relevant "messages" part
         messages = result["outputs"][0]["outputs"][0]["messages"]
+        message_texts = [msg["message"] for msg in messages]
 
+        # readable_text = "\n".join([f"{key.capitalize()}: {value}" for key, value in message_texts.items()])
+        # st.write(readable_text)
         # Show cleaned output
-        st.json({"messages": messages})
+        #st.json({"messages": message_texts})
+        st.write(message_texts[0])
 
     except requests.exceptions.RequestException as e:
         st.error(f"Request failed: {e}")
